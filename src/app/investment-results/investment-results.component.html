@@ -1,0 +1,37 @@
+@if (annualData.length==0) {
+    <h1 class="center">Please, press Calculate to make the calculations</h1>
+}
+@else {
+<table>
+    <thead>
+        <tr>
+            <th>Year</th>
+            <th>Investment value</th>
+            <th>Interest (year)</th>
+            <th>Total interest</th>
+            <th>Invested capital</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (data of annualData; track data.year) {
+            <tr>
+                <td>
+                    {{data.year}}
+                </td>
+                <td>
+                    {{data.valueEndOfYear.toFixed(2) | currency:"EUR"}}
+                </td>
+                <td>
+                    {{data.interest.toFixed(2) |currency:"EUR"}}
+                </td>
+                <td>
+                    {{data.totalInterest.toFixed(2)|currency:"EUR"}}
+                </td>
+                <td>
+                    {{data.totalAmountInvested.toFixed(2)|currency:"EUR"}}
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+}
