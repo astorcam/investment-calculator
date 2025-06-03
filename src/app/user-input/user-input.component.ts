@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter} from '@angular/core';
-import { ReactiveFormsModule,  FormGroup, FormControl, Validators } from '@angular/forms';
+import {  FormGroup, FormControl, Validators } from '@angular/forms';
 
 export interface InvestmentInput { 
   initialInvestment: number;
@@ -9,8 +9,7 @@ export interface InvestmentInput {
 
 @Component({
   selector: 'app-user-input',
-  standalone: true,
-  imports: [ ReactiveFormsModule ],
+  standalone: false,
   templateUrl: './user-input.component.html',
   styleUrl: './user-input.component.css'
 })
@@ -34,5 +33,6 @@ onSubmit() {
         expectedReturn: Number(formValue.expectedReturn), 
         duration: Number(formValue.duration) }; 
       this.calculate.emit(investmentData); } 
+      this.investmentForm.reset()
   } 
 }

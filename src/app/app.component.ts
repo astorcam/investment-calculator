@@ -1,13 +1,12 @@
 import { Component, ViewChild } from '@angular/core';
-import { HeaderComponent } from './header/header.component';
-import { UserInputComponent, InvestmentInput } from "./user-input/user-input.component";
+
+import {  InvestmentInput } from "./user-input/user-input.component";
 import { InvestmentResultsComponent } from './investment-results/investment-results.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
+  standalone: false,
   templateUrl: './app.component.html',
-  imports: [HeaderComponent, UserInputComponent,InvestmentResultsComponent]
 })
 export class AppComponent {
 
